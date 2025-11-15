@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>这是我的第一个网页</title>
-  <style>
-    body{
-      text-align：center;
-      background-color：#f5f5f5;
-      font-family："微软雅黑";
-    }
-    h1{
-      color：#3366cc;
-    }
-  </style>
+    <meta charset="utf-8">
+    <title>My GitHub Button</title>
 </head>
 <body>
-  <h1>你好 欢迎你</h1>
-    <p>这是我在github上写的第一个网页</p>
+
+<h2>点击按钮调用后台接口</h2>
+
+<button onclick="runAPI()">点击运行</button>
+
+<p id="result"></p>
+
+<script>
+function runAPI() {
+    fetch("https://your-backend.com/api/run")  // ← 修改成你的接口
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("result").innerText = "返回结果：" + JSON.stringify(data);
+        })
+        .catch(err => {
+            document.getElementById("result").innerText = "请求失败：" + err;
+        });
+}
+</script>
+
 </body>
 </html>
