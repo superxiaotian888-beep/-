@@ -17,7 +17,7 @@ function runAPI() {
     fetch("https://proud-rain-ac3d.superxiaotian888.workers.dev/")  // ← 修改成你的接口
         .then(response => response.text())
         .then(data => {
-            document.getElementById("result").innerText = "返回结果：" + JSON.stringify(data);
+            document.getElementById("result").innerText = "返回结果：" + TEXT.stringify(data);
         })
         .catch(err => {
             document.getElementById("result").innerText = "请求失败：" + err;
