@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>前端调用 Worker API 示例</title>
+</head>
+<body>
+  <h1>前端调用 Cloudflare Worker API</h1>
+
+  <button id="btn">点击调用 API</button>
+
+  <p id="result"></p>
+
+  <script>
+    document.getElementById("btn").addEventListener("click", async () => {
+      const resultEl = document.getElementById("result");
+
+      try {
+        const res = await fetch("https://你的worker子域名.workers.dev/api/hello");
+        const data = await res.json();
+        resultEl.textContent = "后端返回：" + data.message;
+      } catch (err) {
+        resultEl.textContent = "请求失败：" + err;
+      }
+    });
+  </script>
+</body>
+</html>
