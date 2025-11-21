@@ -16,7 +16,7 @@
       const resultEl = document.getElementById("result");
 
       try {
-        const res = await fetch("https://你的worker子域名.workers.dev/api/hello");
+        const res = await fetch("https: //cold-wind-883a.superxiaotian888.workers.dev");
         const data = await res.json();
         resultEl.textContent = "后端返回：" + data.message;
       } catch (err) {
